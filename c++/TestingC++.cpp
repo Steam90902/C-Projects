@@ -3,31 +3,37 @@
 //using str_t = std::string;
 
 int main(){
+    double temp;
+    char iUnit;
+    char cUnit;
 
-    int sibl;
+    std::cout << "Enter the temperature: ";
+    std::cin >> temp;
 
-    std::cout << "How many siblings do you have?: ";
-    std::cin >> sibl;
+    
+    std::cout << "K = Kelvin \nC = Celcius \nF = Fahrenheit\n";
+    std::cout << "Enter the temp unit: ";
+    std::cin >> iUnit;
 
-    switch(sibl){
-        case 1:
-            std::cout << "tHAT ISNT REALLY ALOT";
-            break;
-        case 2:
-            std::cout << "tOO much";
-            break;
-        
+    std::cout << "And enter what unit you wanna convert to: ";
+    std::cin >> cUnit;
+
+    if(iUnit == 'F' && cUnit == 'C' ){
+        temp -= 32;
+        temp = temp * 5;
+        temp = temp / 9; 
+        std::cout << temp << "\n";
     }
-    //std::string name;
-    //int height;
-    //std::cout << "How tall are you in cm: ";
-    //std::cin >> height;
 
-    //std::cout << "Name pleaase: ";
-    //std::getline(std::cin >> std::ws, name);
+    else if(iUnit == 'F' && cUnit == 'K' ){
+        temp -= 32;
+        temp = 5 * temp;
+        temp = temp / 9;
+        temp += 273.15;
+        std::cout << temp << "\n";
+    }
+    
 
-    //std::cout << "Hello " << name << "\n You are " << height << "\n";
 
 
-    return 0;
 }
