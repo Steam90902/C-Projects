@@ -1,33 +1,31 @@
 #include <iostream>
 
-std::string bankName = "Bank of Congo";
-int availableMoney = 1000;
-
-
-void deposit(int money);
-void withdraw(int money);
-void showBalance();
+int inpArr();
 
 int main(){
+    int size;
+    std::cout << "Enter the size of the array: \n";
+    std::cin >> size;
 
-    deposit(200);
-    showBalance();
-    withdraw(5000);
-    showBalance();
+    std::cout << "\n";
 
+    std::cout << "Enter your " << size << " numbers \n";
+    int numbers[] = {};
+    int temp = 0;
+    //while(temp >=)
+    for(int i = 0; i < size; i++){
+        std::cout << i << ": ";
+        std::cin >> numbers[i];
+        std::cout << "\n";
+    }
+
+    std::cout << "What number should we find?: ";
+    std::cin >> temp;
+    int i = 0;
+    while(numbers[i] > temp){
+        std::cout << "Wrong";
+        i++;
+    }
+    std::cout << "The number " << temp << "was found in the index" << i;
     return 0;
-}
-
-void deposit(int money){
-    std::cout << bankName << ": deposited " << money << "\n";
-    availableMoney += money;
-}
-
-void showBalance(){
-    std::cout << "In " << bankName << " you have £" << availableMoney << "\n";
-}
-
-void withdraw(int money){
-    std::cout << bankName << ": withdrawn " << money << "\n";
-    availableMoney -= money;
 }

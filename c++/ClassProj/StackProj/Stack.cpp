@@ -45,16 +45,33 @@ int main(){
 }
 
 void push(int value){
-    stack[pointer] = value;
-    pointer += 1;
+    if(pointer >= 5){
+        std::cout << "Stack Overflow\n";
+    }
+    else{
+        stack[pointer] = value;
+        pointer += 1;
+    }
 }
 
 int pop(){
-    int temp = stack[pointer -1];
-    pointer -= 1;
-    return temp;
+    if(pointer >= 0){
+        std::cout << "Stack Underflow\n";
+        return 404;
+    }
+    else{
+        int temp = stack[pointer -1];
+        pointer -= 1;
+        return temp;
+    } 
 }
 
 void peek(){
-    std::cout << stack[pointer -1 ] << " is next in the stack\n";
+    if(pointer >= 0 ){
+        std::cout << "Stack Underflow";
+    }
+    else{
+        std::cout << stack[pointer -1 ] << " is next in the stack\n";
+    }
+   
 }
