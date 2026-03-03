@@ -19,5 +19,6 @@ find_package(OpenGL REQUIRED)
 
 add_executable(ProjOpenGL main.cpp glad.c)
 target_link_libraries(ProjOpenGL
+        glad
         glfw
         OpenGL::GL)
